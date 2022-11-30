@@ -10,6 +10,7 @@
 ### Work directory:		-
 ### Run command:		-
 
+#-------------------Clock signal creation---------------------#
 set EXTCLK "clk";
 set_units -time 1.0ns;
 
@@ -34,7 +35,7 @@ set_clock_transition -fall -max $MAXFALL [get_clocks $EXTCLK]
 
 set_max_capacitance 0.5 [all_outputs]
 
-################FALSE PATH SECTION####################
+#----------------False path section--------------------#
 
 set_ideal_network [get_ports {reset}]
 set_false_path -from [get_ports {reset}]
