@@ -21,12 +21,9 @@ init_design
 win
 
 #---------------------Floorplanning---------------------#
-getIoFlowFlag
-setIoFlowFlag 0
 floorPlan -site core_hd -s 300 300 20.0 20.0 20.0 20.0
 
 #---------------------Powerplanning---------------------#
-getIoFlowFlag
 clearGlobalNets
 globalNetConnect VDD -type pgpin -pin vdd -inst * -module {}
 globalNetConnect VDD -type tiehi -pin vdd -inst * -module {}
@@ -34,19 +31,7 @@ globalNetConnect VDD -type tielo -pin vdd -inst * -module {}
 globalNetConnect VSS -type tielo -pin gnd -inst * -module {}
 globalNetConnect VSS -type tiehi -pin gnd -inst * -module {}
 globalNetConnect VSS -type pgpin -pin gnd -inst * -module {}
-set sprCreateIeRingNets {}
-set sprCreateIeRingLayers {}
-set sprCreateIeRingWidth 1.0
-set sprCreateIeRingSpacing 1.0
-set sprCreateIeRingOffset 1.0
-set sprCreateIeRingThreshold 1.0
-set sprCreateIeRingJogDistance 1.0
 addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer METTPL -type core_rings -jog_distance 2.8 -threshold 2.8 -nets {VDD VSS} -follow core -stacked_via_bottom_layer MET1 -layer {bottom MET1 top MET1 right MET2 left MET2} -width 3 -spacing 0.6 -offset 3.15
-set sprCreateIeStripeNets {}
-set sprCreateIeStripeLayers {}
-set sprCreateIeStripeWidth 10.0
-set sprCreateIeStripeSpacing 20.0
-set sprCreateIeStripeThreshold 1.0
 addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit MET3 -max_same_layer_jog_length 6 -padcore_ring_bottom_layer_limit MET1 -set_to_set_distance 60 -skip_via_on_pin Standardcell -stacked_via_top_layer METTPL -padcore_ring_top_layer_limit MET3 -spacing 2.5 -merge_stripes_value 2.8 -layer MET2 -block_ring_bottom_layer_limit MET1 -width 3 -nets {VSS VDD} -stacked_via_bottom_layer MET1
 sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { MET1 METTPL } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { MET1 METTPL } -nets { VDD VSS } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { MET1 METTPL }
 editPowerVia -skip_via_on_pin Standardcell -bottom_layer MET1 -add_vias 1 -top_layer METTPL
