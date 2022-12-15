@@ -1,0 +1,52 @@
+### Project Name:		"Signal Transition Detector"
+### Author:			"R.A. Citaishvili"
+### Technology:			"X-FAB 180nm CMOS, XT018 1143"
+### Library:			"D_CELLS_HD, 1.8V"
+### Tools:			"Cadence Encounter"
+###
+### Stage:			"Layout"
+### File description:		"Pin assignment descrition"
+###
+### Work directory:		Digital_ASIC/Scrits
+### Run command:		-
+
+Version: 2
+
+Offset: 50
+Pin: In[0] W MET4
+Spacing: 40
+Pin: In[1] W MET4
+Pin: In[2] W MET4
+Pin: In[3] W MET4
+Pin: In[4] W MET4
+Pin: In[5] W MET4
+Pin: clk W MET4
+
+Offset: 40
+Pin: In[6] N MET4
+Spacing: 50
+Pin: In[7] N MET4
+Pin: In[8] N MET4
+Pin: In[9] N MET4
+Pin: In[10] N MET4
+Pin: In[11] N MET4
+
+Offset: 50
+Pin: Out[0] E MET4
+Spacing: 40
+Pin: Out[1] E MET4
+Pin: Out[2] E MET4
+Pin: Out[3] E MET4
+Pin: Out[4] E MET4
+Pin: Out[5] E MET4
+Pin: reset E MET4
+
+Offset: 40
+Pin: Out[6] S MET4
+Spacing: 50
+Pin: Out[7] S MET4
+Pin: Out[8] S MET4
+Pin: Out[9] S MET4
+Pin: Out[10] S MET4
+Pin: Out[11] S MET4
+
