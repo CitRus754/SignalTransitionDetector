@@ -13,6 +13,7 @@ Repo is organized as set of two folders:
 	- *STD.sdc* - constraint file for synthesis and layout stages;
 	- *X_FAB_typ.tcl*, *X_FAB_slow.tcl*, *X_FAB_fast.tcl* - files containing paths to technology library of digital cells in different PVT corners;
 	- *STD.tcl* - script for synthesis flow;
+	- *STD_pins* - I/O assignment file;
 	- *MMMC.tcl* - file for a corner description;
 	- *STD_PaR.tcl* - script for layout flow.
 
